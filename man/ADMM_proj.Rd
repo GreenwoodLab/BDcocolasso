@@ -4,8 +4,14 @@
 \alias{ADMM_proj}
 \title{ADMM algorithm}
 \usage{
-ADMM_proj(mat, epsilon = 1e-04, mu = 10, it.max = 1000,
-  etol = 1e-04, etol_distance = 1e-04)
+ADMM_proj(
+  mat,
+  epsilon = 1e-04,
+  mu = 10,
+  it.max = 1000,
+  etol = 1e-04,
+  etol_distance = 1e-04
+)
 }
 \arguments{
 \item{mat}{Matrix to be projected}
@@ -28,6 +34,11 @@ list containing \itemize{
 }
 \description{
 Finds the nearest positive semi-definite matrix with respect to the max norm
+}
+\examples{
+M = matrix(-1,20,20)
+mat_proj <- BDcocolasso::ADMM_proj(mat=M)$mat
+
 }
 \seealso{
 \url{https://web.stanford.edu/~boyd/papers/pdf/admm_distr_stats.pdf}

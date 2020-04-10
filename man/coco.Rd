@@ -4,12 +4,30 @@
 \alias{coco}
 \title{Coco}
 \usage{
-coco(Z, y, n, p, p1 = NULL, p2 = NULL, center.Z = TRUE,
-  scale.Z = TRUE, center.y = TRUE, scale.y = TRUE,
+coco(
+  Z,
+  y,
+  n,
+  p,
+  p1 = NULL,
+  p2 = NULL,
+  center.Z = TRUE,
+  scale.Z = TRUE,
+  center.y = TRUE,
+  scale.y = TRUE,
   lambda.factor = ifelse(dim(Z)[1] < dim(Z)[2], 0.01, 0.001),
-  step = 100, K = 4, mu = 10, tau = NULL, etol = 1e-04,
-  optTol = 1e-05, earlyStopping_max = 10, noise = c("additive",
-  "missing"), block = TRUE, penalty = c("lasso", "SCAD"))
+  step = 100,
+  K = 4,
+  mu = 10,
+  tau = NULL,
+  etol = 1e-04,
+  optTol = 1e-05,
+  earlyStopping_max = 10,
+  noise = c("additive", "missing"),
+  block = TRUE,
+  penalty = c("lasso", "SCAD"),
+  mode = "ADMM"
+)
 }
 \arguments{
 \item{Z}{Corrupted design matrix (with additive error or missing data)}
@@ -58,6 +76,8 @@ has an impact on computing speed, since iterations corresponding to increasing e
 \item{block}{If TRUE, implements block descent CoCoLasso. If FALSE, implements simple CoCoLasso.}
 
 \item{penalty}{Type of penalty used : can be lasso penalty or SCAD penalty}
+
+\item{mode}{ADMM or HM}
 }
 \value{
 list containing \itemize{

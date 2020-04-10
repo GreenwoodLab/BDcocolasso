@@ -4,9 +4,20 @@
 \alias{cv_covariance_matrices_block_descent}
 \title{Projected covariance matrices for BD-CoCoLasso}
 \usage{
-cv_covariance_matrices_block_descent(K, mat, y, p, p1, p2, mu,
-  tau = NULL, ratio_matrix = NULL, etol = 1e-04,
-  noise = c("additive", "missing"))
+cv_covariance_matrices_block_descent(
+  K,
+  mat,
+  y,
+  p,
+  p1,
+  p2,
+  mu,
+  tau = NULL,
+  ratio_matrix = NULL,
+  etol = 1e-04,
+  noise = c("additive", "missing"),
+  mode = "ADMM"
+)
 }
 \arguments{
 \item{K}{Number of folds for the cross validation}
@@ -30,6 +41,8 @@ cv_covariance_matrices_block_descent(K, mat, y, p, p1, p2, mu,
 \item{etol}{Tolerance used in the ADMM algorithm}
 
 \item{noise}{Type of setting chosen : additive or missing}
+
+\item{mode}{ADMM or HM}
 }
 \value{
 list containing \itemize{
